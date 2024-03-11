@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSA Encryption Simulator</title>
+</head>
+<body>
+    <form method="POST">
+        <label for="p">Enter p:</label><br>
+        <input required type="number" id="p" name="p"><br>
+        <label for="q">Enter q:</label><br>
+        <input required type="number" id="q" name="q"><br>
+        <label for="message">Enter text/number to encrypt:</label><br>
+        <input required type="text" id="message" name="message"><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+    {% if not all_prime%}
+        <p>Your input is not prime, the operation will take the nearest prime numbers: {{p}}, {{q}}</p>
+    {% endif %}
+
+    {% if public_key %}
+        <p>Your message: {{ message }}</p>
+        <p>Your public key is: {{ public_key }}</p>
+        <p>Your private key is: {{ private_key }}</p>
+        <p>Your encrypted message is: {{ encrypted_msg }}</p>
+        <p>Your decrypted message is: {{ decrypted_msg }}</p>
+    {% endif %}
+</body>
+</html>
