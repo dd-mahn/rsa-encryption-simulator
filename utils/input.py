@@ -1,4 +1,4 @@
-from is_prime import is_prime
+from utils.is_prime import is_prime
 from utils.make_prime import make_prime
 
 

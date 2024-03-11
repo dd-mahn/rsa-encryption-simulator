@@ -1,7 +1,7 @@
 import random
 
 from sympy import mod_inverse
-from gcd import gcd
+from utils.gcd import gcd
 
 def generate_keypair(p, q):
     print("Generating your public/private keypairs now . . .")

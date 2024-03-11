@@ -1,4 +1,4 @@
-from is_prime import is_prime
+from utils.is_prime import is_prime
 
 def make_prime(a):
     while not is_prime(a):
