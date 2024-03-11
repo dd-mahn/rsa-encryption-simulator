@@ -4,31 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RSA Encryption Simulator</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-    <form method="POST">
-        <label for="p">Enter p:</label><br>
-        <input required type="number" id="p" name="p"><br>
-        <label for="q">Enter q:</label><br>
-        <input required type="number" id="q" name="q"><br>
-        <label for="message">Enter text/number to encrypt:</label><br>
-        <input required type="text" id="message" name="message"><br>
-        <input type="submit" value="Submit">
-    </form>
-    {% if error %}
-        <p>{{ error }}</p>
-    {% endif %}
+    <div class="input">
+        <h1>RSA Encryption Simulator</h1>
+        <form method="POST" class="form">
+            <label for="p">Enter p:</label>
+            <input required type="number" id="p" name="p"><br>
+            <label for="q">Enter q:</label>
+            <input required type="number" id="q" name="q"><br>
+            <label for="message">Enter text/number to encrypt:</label>
+            <input required type="text" id="message" name="message"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 
-    {% if not all_prime%}
-        <p>Your input is not prime, the operation will take the nearest prime numbers: {{p}}, {{q}}</p>
-    {% endif %}
-
-    {% if public_key %}
+    <div class="notification">
+        <h2>Notification</h2>
+        {% if error %}
+        <div class="error">
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+        {% if not all_prime%}
+            <div class="neutral">
+                <p>If your input is not prime, the operation will take the nearest prime numbers: {{primeP}}, {{primeQ}}</p>
+            </div>
+        {% endif %}
+    </div>
+    
+    <div class="output"> 
+        <h2>Output</h2>
+        {% if public_key %}
         <p>Your message: {{ message }}</p>
         <p>Your public key is: {{ public_key }}</p>
         <p>Your private key is: {{ private_key }}</p>
         <p>Your encrypted message is: {{ encrypted_msg }}</p>
         <p>Your decrypted message is: {{ decrypted_msg }}</p>
-    {% endif %}
+        {% endif %}
+    </div>
+   
 </body>
 </html>
