@@ -1,5 +1,5 @@
 from is_prime import is_prime
-from make_prime import make_prime
+from utils.make_prime import make_prime
 
 
 def paramInput():
