@@ -16,5 +16,6 @@ def paramInput():
         print("Your number is being modified to be prime")
         print("Your first prime number: ",make_prime(p))
         print("Your second prime number: ",make_prime(q))
+        return make_prime(p), make_prime(q)
         
     return p, q
