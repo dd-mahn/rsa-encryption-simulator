@@ -1,7 +1,7 @@
-from decrypt import decrypt
-from encrypt import encrypt
-from generate_keypair import generate_keypair
-from input import paramInput
+from utils.decrypt import decrypt
+from utils.encrypt import encrypt
+from utils.generate_keypair import generate_keypair
+from utils.input import paramInput
 
 if __name__ == '__main__':
     p, q = paramInput()
