@@ -2,14 +2,9 @@ import random
 
 from sympy import mod_inverse
 from gcd import gcd
-from is_prime import is_prime
-
 
 def generate_keypair(p, q):
-    if not (is_prime(p) and is_prime(q)):
-        raise ValueError('Cả hai số phải là số nguyên tố.')
-    elif p == q:
-        raise ValueError('Hai số không được trùng nhau')
+    print("Generating your public/private keypairs now . . .")
     # Tính n
     n = p * q
 
