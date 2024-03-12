@@ -14,7 +14,7 @@ def generate_keypair(p, q):
     # Chọn số nguyên e sao cho e và phi(n) là hai số nguyên tố cùng nhau
     e = random.randrange(1, phi)
 
-    # Đảm bảo e và phi(n) có ước chung bằng 1
+    # Đảm bảo e và phi(n) có ước chung lớn nhất bằng 1
     g = gcd(e, phi)
     while g != 1:
         e = random.randrange(1, phi)
@@ -23,5 +23,5 @@ def generate_keypair(p, q):
     # Sử dụng thuật toán Euclid mở rộng để tạo khóa bí mật
     d = mod_inverse(e, phi)
 
-    # Trả về bộ khóa công khai và khóa bí mật
+    # Trả về bộ khóa công khai (e,n) và khóa bí mật (d,n)
     return ((e, n), (d, n))
